@@ -15,6 +15,9 @@ public:
     RecipeMate(QWidget *parent = nullptr);
     ~RecipeMate();
 
+private slots:
+    void on_getRecipesButton_clicked();
+
 private:
     Ui::RecipeMate *ui;
 };

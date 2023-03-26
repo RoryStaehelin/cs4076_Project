@@ -10,13 +10,16 @@ CONFIG += c++17
 
 SOURCES += \
     main.cpp \
-    recipemate.cpp
+    recipemate.cpp \
+    recipeview.cpp
 
 HEADERS += \
-    recipemate.h
+    recipemate.h \
+    recipeview.h
 
 FORMS += \
-    recipemate.ui
+    recipemate.ui \
+    recipeview.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
