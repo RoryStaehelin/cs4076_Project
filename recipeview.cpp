@@ -1,6 +1,6 @@
 #include "recipeview.h"
+#include "qnetworkaccessmanager.h"
 #include "ui_recipeview.h"
-
 
 RecipeView::RecipeView(QWidget *parent, QString keyword, bool vegan, bool vegetarian, bool glutenFree) :
 
@@ -8,6 +8,8 @@ RecipeView::RecipeView(QWidget *parent, QString keyword, bool vegan, bool vegeta
     ui(new Ui::RecipeView)
 {
     ui->setupUi(this);
+    QNetworkAccessManager *manager = new QNetworkAccessManager();
+    QNetworkRequest request;
 }
 
 
