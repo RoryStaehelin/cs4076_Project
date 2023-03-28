@@ -17,7 +17,7 @@ RecipeMate::~RecipeMate()
 
 void RecipeMate::on_getRecipesButton_clicked()
 {
-    QString keyword = ui->Keyword->text();
+    QByteArray keyword = ui->Keyword->text().toUtf8();
     bool vegan = ui->Vegan->isChecked();
     bool vegetarian = ui->Vegetarian->isChecked();
     bool glutenFree = ui->GlutenFree->isChecked();
