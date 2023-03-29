@@ -10,16 +10,23 @@ CONFIG += c++17
 
 SOURCES += \
     createnewrecipe.cpp \
+    importrecipe.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    openrecipe.cpp
 
 HEADERS += \
+    Recipe.h \
     createnewrecipe.h \
-    mainwindow.h
+    importrecipe.h \
+    mainwindow.h \
+    openrecipe.h
 
 FORMS += \
     createnewrecipe.ui \
-    mainwindow.ui
+    importrecipe.ui \
+    mainwindow.ui \
+    openrecipe.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

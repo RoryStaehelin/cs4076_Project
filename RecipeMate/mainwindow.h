@@ -13,7 +13,15 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow(QWidget *parent = nullptr);
+    createNewRecipe();
     ~MainWindow();
+
+private slots:
+    void on_CreateNewRecipeButton_clicked();
+
+    void on_OpenRecipeButton_clicked();
+
+    void on_ImportRecipeButton_clicked();
 
 private:
     Ui::MainWindow *ui;
