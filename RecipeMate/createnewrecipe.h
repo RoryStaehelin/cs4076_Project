@@ -22,6 +22,8 @@ private slots:
 
     void on_ExitNoSave_clicked();
 
+    void on_Submit_clicked();
+
 private:
     Ui::CreateNewRecipe *ui;
 };
