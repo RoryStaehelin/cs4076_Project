@@ -1,5 +1,7 @@
 #include "createnewrecipe.h"
 #include "ui_createnewrecipe.h"
+#include <vector>
+#include "Recipe.h"
 
 CreateNewRecipe::CreateNewRecipe(QWidget *parent) :
     QMainWindow(parent),
@@ -34,6 +36,19 @@ void CreateNewRecipe::on_ExitNoSave_clicked()
 
 void CreateNewRecipe::on_Submit_clicked()
 {
-
+    QString name = ui->RecipeName->text();
+    std::vector<QString> ingredients;
+    std::vector<QString> instructions;
+    for (int i = 0; i < ui->Ingredients->count(); i++)
+    {
+        ingredients.push_back(ui->Ingredients->item(i)->text());
+    }
+    for (int i = 0; i < ui->Instructions->count(); i++)
+    {
+        instructions.push_back(ui->Instructions->item(i)->text());
+    }
+    Recipe recipe = Recipe(name, ingredients, instructions);
+    recipe.save();
+    this->~CreateNewRecipe();
 }
 

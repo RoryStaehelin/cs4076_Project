@@ -12,3 +12,14 @@ OpenRecipe::~OpenRecipe()
 {
     delete ui;
 }
+
+void OpenRecipe::on_ViewAllRecipesButton_clicked()
+{
+
+}
+
+
+void OpenRecipe::on_SearchButton_clicked()
+{
+
+}

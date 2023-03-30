@@ -15,6 +15,9 @@ public:
     explicit ImportRecipe(QWidget *parent = nullptr);
     ~ImportRecipe();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::ImportRecipe *ui;
 };
