@@ -1,5 +1,6 @@
 #include "openrecipe.h"
 #include "ui_openrecipe.h"
+#include "Recipe.h"
 
 OpenRecipe::OpenRecipe(QWidget *parent) :
     QMainWindow(parent),
@@ -15,9 +16,31 @@ OpenRecipe::~OpenRecipe()
 
 void OpenRecipe::on_ViewAllRecipesButton_clicked()
 {
-
+    QFile file = QFile("recipes.txt");
+    file.open(QIODeviceBase::ReadOnly);
+    QTextStream stream = QTextStream(&file);
+    QString line;
+    QString name;
+    std::vector<QString> ingredients;
+    std::vector<QString> instructions;
+    std::vector<Recipe> recipes;
+    bool start = true;
+    while (!stream.atEnd())
+    {
+        line = stream.readLine();
+        if (line.indexOf("---") == 0)
+        {
+            if (!start)
+            {
+                recipes.push_back(Recipe(name, ingredients, instructions));
+            }
+            name = line.remove(0, 2);
+            ingredients.clear();
+            instructions.clear();
+        }
+        start = false;
+    }
 }
-
 
 void OpenRecipe::on_SearchButton_clicked()
 {

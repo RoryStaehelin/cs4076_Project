@@ -14,20 +14,26 @@ SOURCES += \
     importrecipe.cpp \
     main.cpp \
     mainwindow.cpp \
-    openrecipe.cpp
+    openrecipe.cpp \
+    showmultirecipe.cpp \
+    showsinglerecipe.cpp
 
 HEADERS += \
     Recipe.h \
     createnewrecipe.h \
     importrecipe.h \
     mainwindow.h \
-    openrecipe.h
+    openrecipe.h \
+    showmultirecipe.h \
+    showsinglerecipe.h
 
 FORMS += \
     createnewrecipe.ui \
     importrecipe.ui \
     mainwindow.ui \
-    openrecipe.ui
+    openrecipe.ui \
+    showmultirecipe.ui \
+    showsinglerecipe.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

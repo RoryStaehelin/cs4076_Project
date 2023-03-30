@@ -11,7 +11,7 @@ class Recipe
     std::vector<QString> ingredients;
     std::vector<QString> instructions;
 public:
-    Recipe(QString name, std::vector<QString> ingredientsRef, std::vector<QString> instructionsRef);
+    Recipe(QString name, std::vector<QString> ingredients, std::vector<QString> instructions);
     Recipe(QString);
     void save();
     QString toString();
