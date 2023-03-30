@@ -46,3 +46,16 @@ QString Recipe::toString()
     }
     return recipeString;
 }
+
+QString Recipe::getName()
+{
+    return name;
+}
+std::vector<QString> Recipe::getIngredients()
+{
+    return ingredients;
+}
+std::vector<QString> Recipe::getInstructions()
+{
+    return instructions;
+}

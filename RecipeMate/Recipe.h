@@ -15,6 +15,9 @@ public:
     Recipe(QString);
     void save();
     QString toString();
+    QString getName();
+    std::vector<QString> getIngredients();
+    std::vector<QString> getInstructions();
 };
 
 #endif // RECIPE_H

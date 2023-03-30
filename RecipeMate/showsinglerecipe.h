@@ -2,6 +2,7 @@
 #define SHOWSINGLERECIPE_H
 
 #include <QMainWindow>
+#include "Recipe.h"
 
 namespace Ui {
 class ShowSingleRecipe;
@@ -12,7 +13,7 @@ class ShowSingleRecipe : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit ShowSingleRecipe(QWidget *parent = nullptr);
+    ShowSingleRecipe(Recipe *recipe);
     ~ShowSingleRecipe();
 
 private:
