@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QListWidget>
@@ -19,6 +20,7 @@
 #include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -40,6 +42,12 @@ public:
     QPushButton *Submit;
     QPushButton *ExitNoSave;
     QLabel *label_4;
+    QWidget *widget;
+    QVBoxLayout *verticalLayout;
+    QCheckBox *Vegan;
+    QCheckBox *Vegetarian;
+    QCheckBox *NutFree;
+    QCheckBox *GlutenFree;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -58,7 +66,7 @@ public:
         AddIngredientBox->setGeometry(QRect(50, 130, 321, 61));
         Instructions = new QListWidget(centralwidget);
         Instructions->setObjectName("Instructions");
-        Instructions->setGeometry(QRect(750, 60, 421, 531));
+        Instructions->setGeometry(QRect(750, 60, 421, 381));
         label = new QLabel(centralwidget);
         label->setObjectName("label");
         label->setGeometry(QRect(470, 30, 141, 16));
@@ -89,6 +97,32 @@ public:
         label_4 = new QLabel(centralwidget);
         label_4->setObjectName("label_4");
         label_4->setGeometry(QRect(50, 280, 111, 16));
+        widget = new QWidget(centralwidget);
+        widget->setObjectName("widget");
+        widget->setGeometry(QRect(770, 460, 121, 131));
+        verticalLayout = new QVBoxLayout(widget);
+        verticalLayout->setObjectName("verticalLayout");
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        Vegan = new QCheckBox(widget);
+        Vegan->setObjectName("Vegan");
+
+        verticalLayout->addWidget(Vegan);
+
+        Vegetarian = new QCheckBox(widget);
+        Vegetarian->setObjectName("Vegetarian");
+
+        verticalLayout->addWidget(Vegetarian);
+
+        NutFree = new QCheckBox(widget);
+        NutFree->setObjectName("NutFree");
+
+        verticalLayout->addWidget(NutFree);
+
+        GlutenFree = new QCheckBox(widget);
+        GlutenFree->setObjectName("GlutenFree");
+
+        verticalLayout->addWidget(GlutenFree);
+
         CreateNewRecipe->setCentralWidget(centralwidget);
         menubar = new QMenuBar(CreateNewRecipe);
         menubar->setObjectName("menubar");
@@ -115,6 +149,10 @@ public:
         Submit->setText(QCoreApplication::translate("CreateNewRecipe", "Submit", nullptr));
         ExitNoSave->setText(QCoreApplication::translate("CreateNewRecipe", "Exit without Saving", nullptr));
         label_4->setText(QCoreApplication::translate("CreateNewRecipe", "Add Instruction", nullptr));
+        Vegan->setText(QCoreApplication::translate("CreateNewRecipe", "Vegan", nullptr));
+        Vegetarian->setText(QCoreApplication::translate("CreateNewRecipe", "Vegetarian", nullptr));
+        NutFree->setText(QCoreApplication::translate("CreateNewRecipe", "Nut-Free", nullptr));
+        GlutenFree->setText(QCoreApplication::translate("CreateNewRecipe", "Gluten-Free", nullptr));
     } // retranslateUi
 
 };

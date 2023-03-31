@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
@@ -26,6 +27,8 @@ public:
     QWidget *centralwidget;
     QListWidget *listWidget;
     QPushButton *OpenRecipeButton;
+    QPushButton *BackButton;
+    QLabel *RecipeNumLabel;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -43,6 +46,12 @@ public:
         OpenRecipeButton = new QPushButton(centralwidget);
         OpenRecipeButton->setObjectName("OpenRecipeButton");
         OpenRecipeButton->setGeometry(QRect(340, 470, 80, 24));
+        BackButton = new QPushButton(centralwidget);
+        BackButton->setObjectName("BackButton");
+        BackButton->setGeometry(QRect(190, 30, 80, 24));
+        RecipeNumLabel = new QLabel(centralwidget);
+        RecipeNumLabel->setObjectName("RecipeNumLabel");
+        RecipeNumLabel->setGeometry(QRect(160, 440, 121, 16));
         ShowMultiRecipe->setCentralWidget(centralwidget);
         menubar = new QMenuBar(ShowMultiRecipe);
         menubar->setObjectName("menubar");
@@ -61,6 +70,8 @@ public:
     {
         ShowMultiRecipe->setWindowTitle(QCoreApplication::translate("ShowMultiRecipe", "MainWindow", nullptr));
         OpenRecipeButton->setText(QCoreApplication::translate("ShowMultiRecipe", "Open", nullptr));
+        BackButton->setText(QCoreApplication::translate("ShowMultiRecipe", "Back", nullptr));
+        RecipeNumLabel->setText(QCoreApplication::translate("ShowMultiRecipe", "TextLabel", nullptr));
     } // retranslateUi
 
 };

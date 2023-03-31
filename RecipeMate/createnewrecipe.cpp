@@ -1,13 +1,37 @@
 #include "createnewrecipe.h"
 #include "ui_createnewrecipe.h"
-#include <vector>
 #include "Recipe.h"
+#include "comparetemplate.h"
 
-CreateNewRecipe::CreateNewRecipe(QWidget *parent) :
-    QMainWindow(parent),
+namespace flagString
+{
+    QString flagTrue = "1";
+    QString flagFalse = "0";
+}
+
+CreateNewRecipe::CreateNewRecipe() :
+    QMainWindow(nullptr),
     ui(new Ui::CreateNewRecipe)
 {
     ui->setupUi(this);
+}
+
+CreateNewRecipe::CreateNewRecipe(Recipe *recipe) :
+    QMainWindow(nullptr),
+    ui(new Ui::CreateNewRecipe)
+{
+    ui->setupUi(this);
+    ui->RecipeName->setText(recipe->getName());
+    std::vector ingredients = recipe->getIngredients();
+    std::vector instructions = recipe->getInstructions();
+    for (int i = 0; CompareTemplate::compare(i, (int)ingredients.size()); i++)
+    {
+        ui->Ingredients->addItem(ingredients[i]);
+    }
+    for (int i = 0; i < instructions.size(); i++)
+    {
+        ui->Instructions->addItem(instructions[i]);
+    }
 }
 
 CreateNewRecipe::~CreateNewRecipe()
@@ -48,7 +72,41 @@ void CreateNewRecipe::on_Submit_clicked()
         instructions.push_back(ui->Instructions->item(i)->text());
     }
     Recipe recipe = Recipe(name, ingredients, instructions);
+    QString flags;
+    if (ui->Vegan->isChecked())
+    {
+        flags.append(flagString::flagTrue);
+    }
+    else
+    {
+        flags.append(flagString::flagFalse);
+    }
+    if (ui->Vegetarian->isChecked())
+    {
+        flags.append(flagString::flagTrue);
+    }
+    else
+    {
+        flags.append(flagString::flagFalse);
+    }
+    if (ui->NutFree->isChecked())
+    {
+        flags.append(flagString::flagTrue);
+    }
+    else
+    {
+        flags.append(flagString::flagFalse);
+    }
+    if (ui->GlutenFree->isChecked())
+    {
+        flags.append(flagString::flagTrue);
+    }
+    else
+    {
+        flags.append(flagString::flagFalse);
+    }
+    recipe.setFlags(flags);
     recipe.save();
-    this->~CreateNewRecipe();
+    this->deleteLater();
 }
 

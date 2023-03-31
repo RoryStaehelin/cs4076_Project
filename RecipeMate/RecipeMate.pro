@@ -11,6 +11,7 @@ CONFIG += c++17
 SOURCES += \
     Recipe.cpp \
     createnewrecipe.cpp \
+    customexception.cpp \
     importrecipe.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -20,7 +21,9 @@ SOURCES += \
 
 HEADERS += \
     Recipe.h \
+    comparetemplate.h \
     createnewrecipe.h \
+    customexception.h \
     importrecipe.h \
     mainwindow.h \
     openrecipe.h \

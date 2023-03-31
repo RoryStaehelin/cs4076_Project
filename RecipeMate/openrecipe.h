@@ -8,6 +8,9 @@
 #include <QTextStream>
 #include "Recipe.h"
 
+
+extern int recipeNum;
+
 namespace Ui {
 class OpenRecipe;
 }

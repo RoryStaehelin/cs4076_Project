@@ -43,7 +43,7 @@
       <x>750</x>
       <y>60</y>
       <width>421</width>
-      <height>531</height>
+      <height>381</height>
      </rect>
     </property>
    </widget>
@@ -170,6 +170,46 @@
     <property name="text">
      <string>Add Instruction</string>
     </property>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>770</x>
+      <y>460</y>
+      <width>121</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QCheckBox" name="Vegan">
+       <property name="text">
+        <string>Vegan</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="Vegetarian">
+       <property name="text">
+        <string>Vegetarian</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="NutFree">
+       <property name="text">
+        <string>Nut-Free</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="GlutenFree">
+       <property name="text">
+        <string>Gluten-Free</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

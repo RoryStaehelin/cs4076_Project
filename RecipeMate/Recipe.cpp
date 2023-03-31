@@ -1,9 +1,12 @@
 #include "Recipe.h"
 
 Recipe::Recipe(QString name, std::vector<QString> ingredients, std::vector<QString> instructions)
-    : name(name), ingredients(ingredients), instructions(instructions)
+    : Data(name), ingredients(ingredients), instructions(instructions)
 {
-
+    vegan = false;
+    vegetarian = false;
+    nutFree = false;
+    glutenFree = false;
 }
 
 Recipe::Recipe(QString string)
@@ -19,6 +22,13 @@ Recipe::Recipe(QString string)
     {
         instructions.push_back(list[i]);
     }
+}
+
+Recipe::Recipe(const Recipe &obj)
+{
+    name = obj.getName();
+    ingredients = obj.getIngredients();
+    instructions = obj.getInstructions();
 }
 
 void Recipe::save()
@@ -47,15 +57,40 @@ QString Recipe::toString()
     return recipeString;
 }
 
-QString Recipe::getName()
+QString Recipe::getName() const
 {
     return name;
 }
-std::vector<QString> Recipe::getIngredients()
+std::vector<QString> Recipe::getIngredients() const
 {
     return ingredients;
 }
-std::vector<QString> Recipe::getInstructions()
+std::vector<QString> Recipe::getInstructions() const
 {
     return instructions;
+}
+
+void Recipe::setName(QString name)
+{
+    this->name = name;
+}
+
+void Recipe::setFlags(QString flags)
+{
+    if (flags[0] == '1')
+    {
+        vegan = true;
+    }
+    if (flags[1] == '1')
+    {
+        vegetarian = true;
+    }
+    if (flags[2] == '1')
+    {
+        nutFree = true;
+    }
+    if (flags[3] == '1')
+    {
+        glutenFree = true;
+    }
 }

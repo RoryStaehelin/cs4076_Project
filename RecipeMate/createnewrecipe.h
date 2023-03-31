@@ -2,6 +2,9 @@
 #define CREATENEWRECIPE_H
 
 #include <QMainWindow>
+#include <vector>
+#include "Recipe.h"
+
 
 namespace Ui {
 class CreateNewRecipe;
@@ -10,9 +13,9 @@ class CreateNewRecipe;
 class CreateNewRecipe : public QMainWindow
 {
     Q_OBJECT
-
 public:
-    explicit CreateNewRecipe(QWidget *parent = nullptr);
+    CreateNewRecipe();
+    CreateNewRecipe(Recipe *recipe);
     ~CreateNewRecipe();
 
 private slots:

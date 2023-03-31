@@ -1,5 +1,6 @@
 debug/Recipe.o
 debug/createnewrecipe.o
+debug/customexception.o
 debug/importrecipe.o
 debug/main.o
 debug/mainwindow.o

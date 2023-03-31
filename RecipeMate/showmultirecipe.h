@@ -21,6 +21,8 @@ public:
 private slots:
     void on_OpenRecipeButton_clicked();
 
+    void on_BackButton_clicked();
+
 private:
     Ui::ShowMultiRecipe *ui;
 };

@@ -28,10 +28,11 @@ public:
     QLabel *RecipeNameLabel;
     QLabel *label_2;
     QLabel *label_3;
-    QPushButton *pushButton;
+    QPushButton *CloseButton;
     QPushButton *EditButton;
     QListWidget *Ingredients;
     QListWidget *Instructions;
+    QPushButton *DeleteButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -51,9 +52,9 @@ public:
         label_3 = new QLabel(centralwidget);
         label_3->setObjectName("label_3");
         label_3->setGeometry(QRect(430, 160, 111, 16));
-        pushButton = new QPushButton(centralwidget);
-        pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(660, 510, 80, 24));
+        CloseButton = new QPushButton(centralwidget);
+        CloseButton->setObjectName("CloseButton");
+        CloseButton->setGeometry(QRect(660, 510, 80, 24));
         EditButton = new QPushButton(centralwidget);
         EditButton->setObjectName("EditButton");
         EditButton->setGeometry(QRect(550, 510, 80, 24));
@@ -63,6 +64,9 @@ public:
         Instructions = new QListWidget(centralwidget);
         Instructions->setObjectName("Instructions");
         Instructions->setGeometry(QRect(410, 200, 361, 281));
+        DeleteButton = new QPushButton(centralwidget);
+        DeleteButton->setObjectName("DeleteButton");
+        DeleteButton->setGeometry(QRect(440, 510, 80, 24));
         ShowSingleRecipe->setCentralWidget(centralwidget);
         menubar = new QMenuBar(ShowSingleRecipe);
         menubar->setObjectName("menubar");
@@ -83,8 +87,9 @@ public:
         RecipeNameLabel->setText(QCoreApplication::translate("ShowSingleRecipe", "Recipe Name", nullptr));
         label_2->setText(QCoreApplication::translate("ShowSingleRecipe", "Ingredients", nullptr));
         label_3->setText(QCoreApplication::translate("ShowSingleRecipe", "Instructions", nullptr));
-        pushButton->setText(QCoreApplication::translate("ShowSingleRecipe", "Close", nullptr));
+        CloseButton->setText(QCoreApplication::translate("ShowSingleRecipe", "Close", nullptr));
         EditButton->setText(QCoreApplication::translate("ShowSingleRecipe", "Edit", nullptr));
+        DeleteButton->setText(QCoreApplication::translate("ShowSingleRecipe", "Delete", nullptr));
     } // retranslateUi
 
 };

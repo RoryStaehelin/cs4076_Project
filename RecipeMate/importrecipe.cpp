@@ -17,6 +17,11 @@ ImportRecipe::~ImportRecipe()
 void ImportRecipe::on_pushButton_clicked()
 {
     Recipe recipe = Recipe(ui->ImportBox->toPlainText());
+    QString name = recipe.getName();
+    if (name.indexOf("---") == 0)
+    {
+        recipe.setName(name.remove(0, 3));
+    }
     recipe.save();
-    this->~ImportRecipe();
+    this->deleteLater();
 }

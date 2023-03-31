@@ -1,6 +1,7 @@
 #include "showmultirecipe.h"
 #include "ui_showmultirecipe.h"
 #include "showsinglerecipe.h"
+#include "openrecipe.h"
 
 ShowMultiRecipe::ShowMultiRecipe(std::vector<Recipe> &recipes) :
     ui(new Ui::ShowMultiRecipe),
@@ -11,11 +12,14 @@ ShowMultiRecipe::ShowMultiRecipe(std::vector<Recipe> &recipes) :
     {
         ui->listWidget->addItem(recipes[i].getName());
     }
+    ui->RecipeNumLabel->setText("Found " + QString::number(recipeNum) + " Recipes");
+    recipeNum = 0;
 }
 
 ShowMultiRecipe::~ShowMultiRecipe()
 {
     delete ui;
+    recipes.clear();
 }
 
 void ShowMultiRecipe::on_OpenRecipeButton_clicked()
@@ -29,9 +33,12 @@ void ShowMultiRecipe::on_OpenRecipeButton_clicked()
             j = i;
         }
     }
-    Recipe selectedRecipe = recipes[j];
-    Recipe *selectedRecipePtr = &selectedRecipe;
-    ShowSingleRecipe *ssrPtr = new ShowSingleRecipe(selectedRecipePtr);
+    ShowSingleRecipe *ssrPtr = new ShowSingleRecipe(recipes[j]);
     ssrPtr->show();
-    this->~ShowMultiRecipe();
+    this->deleteLater();
+}
+
+void ShowMultiRecipe::on_BackButton_clicked()
+{
+    this->deleteLater();
 }

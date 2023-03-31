@@ -40,48 +40,6 @@
      <string>Search</string>
     </property>
    </widget>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>140</y>
-      <width>201</width>
-      <height>131</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <widget class="QCheckBox" name="Vegan">
-       <property name="text">
-        <string>Vegan</string>
-       </property>
-       <attribute name="buttonGroup">
-        <string notr="true">buttonGroup</string>
-       </attribute>
-      </widget>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="Vegetarian">
-       <property name="text">
-        <string>Vegetarian</string>
-       </property>
-       <attribute name="buttonGroup">
-        <string notr="true">buttonGroup</string>
-       </attribute>
-      </widget>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="GlutenFree">
-       <property name="text">
-        <string>Gluten-Free</string>
-       </property>
-       <attribute name="buttonGroup">
-        <string notr="true">buttonGroup</string>
-       </attribute>
-      </widget>
-     </item>
-    </layout>
-   </widget>
    <widget class="QPushButton" name="ViewAllRecipesButton">
     <property name="geometry">
      <rect>

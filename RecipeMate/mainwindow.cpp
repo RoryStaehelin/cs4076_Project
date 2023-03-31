@@ -18,7 +18,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_CreateNewRecipeButton_clicked()
 {
-    CreateNewRecipe *cnr = new CreateNewRecipe(this);
+    CreateNewRecipe *cnr = new CreateNewRecipe();
     cnr->show();
 }
 

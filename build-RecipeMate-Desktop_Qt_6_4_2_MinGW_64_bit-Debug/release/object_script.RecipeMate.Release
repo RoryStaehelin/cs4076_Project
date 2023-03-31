@@ -1,5 +1,6 @@
 release/Recipe.o
 release/createnewrecipe.o
+release/customexception.o
 release/importrecipe.o
 release/main.o
 release/mainwindow.o

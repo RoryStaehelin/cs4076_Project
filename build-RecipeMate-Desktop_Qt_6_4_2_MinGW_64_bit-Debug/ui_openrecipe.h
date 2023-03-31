@@ -12,13 +12,11 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -29,11 +27,6 @@ public:
     QWidget *centralwidget;
     QLineEdit *RecipeName;
     QPushButton *SearchButton;
-    QWidget *layoutWidget;
-    QVBoxLayout *verticalLayout;
-    QCheckBox *Vegan;
-    QCheckBox *Vegetarian;
-    QCheckBox *GlutenFree;
     QPushButton *ViewAllRecipesButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -52,32 +45,6 @@ public:
         SearchButton = new QPushButton(centralwidget);
         SearchButton->setObjectName("SearchButton");
         SearchButton->setGeometry(QRect(370, 230, 80, 24));
-        layoutWidget = new QWidget(centralwidget);
-        layoutWidget->setObjectName("layoutWidget");
-        layoutWidget->setGeometry(QRect(120, 140, 201, 131));
-        verticalLayout = new QVBoxLayout(layoutWidget);
-        verticalLayout->setObjectName("verticalLayout");
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
-        Vegan = new QCheckBox(layoutWidget);
-        buttonGroup = new QButtonGroup(OpenRecipe);
-        buttonGroup->setObjectName("buttonGroup");
-        buttonGroup->addButton(Vegan);
-        Vegan->setObjectName("Vegan");
-
-        verticalLayout->addWidget(Vegan);
-
-        Vegetarian = new QCheckBox(layoutWidget);
-        buttonGroup->addButton(Vegetarian);
-        Vegetarian->setObjectName("Vegetarian");
-
-        verticalLayout->addWidget(Vegetarian);
-
-        GlutenFree = new QCheckBox(layoutWidget);
-        buttonGroup->addButton(GlutenFree);
-        GlutenFree->setObjectName("GlutenFree");
-
-        verticalLayout->addWidget(GlutenFree);
-
         ViewAllRecipesButton = new QPushButton(centralwidget);
         ViewAllRecipesButton->setObjectName("ViewAllRecipesButton");
         ViewAllRecipesButton->setGeometry(QRect(360, 290, 131, 51));
@@ -100,9 +67,6 @@ public:
         OpenRecipe->setWindowTitle(QCoreApplication::translate("OpenRecipe", "MainWindow", nullptr));
         RecipeName->setText(QCoreApplication::translate("OpenRecipe", "Recipe Name", nullptr));
         SearchButton->setText(QCoreApplication::translate("OpenRecipe", "Search", nullptr));
-        Vegan->setText(QCoreApplication::translate("OpenRecipe", "Vegan", nullptr));
-        Vegetarian->setText(QCoreApplication::translate("OpenRecipe", "Vegetarian", nullptr));
-        GlutenFree->setText(QCoreApplication::translate("OpenRecipe", "Gluten-Free", nullptr));
         ViewAllRecipesButton->setText(QCoreApplication::translate("OpenRecipe", "View All Recipes", nullptr));
     } // retranslateUi
 
