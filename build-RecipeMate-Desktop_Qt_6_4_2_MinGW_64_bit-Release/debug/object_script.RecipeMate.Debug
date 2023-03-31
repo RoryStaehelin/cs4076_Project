@@ -1,0 +1,15 @@
+debug/Recipe.o
+debug/createnewrecipe.o
+debug/customexception.o
+debug/importrecipe.o
+debug/main.o
+debug/mainwindow.o
+debug/openrecipe.o
+debug/showmultirecipe.o
+debug/showsinglerecipe.o
+debug/moc_createnewrecipe.o
+debug/moc_importrecipe.o
+debug/moc_mainwindow.o
+debug/moc_openrecipe.o
+debug/moc_showmultirecipe.o
+debug/moc_showsinglerecipe.o

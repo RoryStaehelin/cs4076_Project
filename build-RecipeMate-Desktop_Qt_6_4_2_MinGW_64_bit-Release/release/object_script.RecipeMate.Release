@@ -1,0 +1,15 @@
+release/Recipe.o
+release/createnewrecipe.o
+release/customexception.o
+release/importrecipe.o
+release/main.o
+release/mainwindow.o
+release/openrecipe.o
+release/showmultirecipe.o
+release/showsinglerecipe.o
+release/moc_createnewrecipe.o
+release/moc_importrecipe.o
+release/moc_mainwindow.o
+release/moc_openrecipe.o
+release/moc_showmultirecipe.o
+release/moc_showsinglerecipe.o

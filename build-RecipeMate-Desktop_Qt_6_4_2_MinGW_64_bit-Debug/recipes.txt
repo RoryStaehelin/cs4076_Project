@@ -19,16 +19,24 @@ Instructions
 2. add toppings
 3. cook
 4. eat it
----Peanut Butter Cookies
+---Pancake
 Ingredients
-1 cup peanut butter
-1 cup white sugar
-1 egg
+eggs
+flour
 Instructions
-1. Gather all ingredients.
-2. Preheat the oven to 350 degrees F (175 degrees C). 
-3. Mix peanut butter
-4. Roll mixture into 1-inch balls
-5. Flatten each with a fork, making a criss-cross pattern. 
-6. Bake in the preheated oven until edges are firm, about 10 minutes
-7. Enjoy!
+1. Make batter
+2. fry
+---chicken
+Ingredients
+chicken
+Instructions
+1. cook
+2. serve
+---Chicken wings
+Ingredients
+chicken wings
+BBQ sauce
+Instructions
+1. Put BBQ sauce all over the wings.
+2. Cook 'em.
+3. eat
